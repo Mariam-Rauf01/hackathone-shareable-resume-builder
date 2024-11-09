@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="shareable.css" />
+  </head>
+  <body>
+    <!-- Resume Form -->
+    <form id="resumeForm">
+      <h1>Shareable Resume Builder</h1>
+
+      <!-- Profile Picture Upload -->
+      <label for="profilePic">Upload Profile Picture:</label>
+      <input type="file" id="profilePic" accept="image/*" />
+
+      <!-- Profile Picture Preview -->
+      <div id="profilePicPreview" class="hidden">
+        <img id="profilePicImage" alt="Profile Picture Preview" />
+      </div>
+
+      <!-- Personal Information -->
+      <label for="userName">User Name:</label>
+      <input type="text" id="userName" placeholder="Enter your username" required/>
+      <label for="name">Name:</label>
+      <input type="text" id="name"  placeholder="Enter your Name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email"  placeholder="Enter your email" required />
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required/>
+
+      <!-- Education -->
+      <label for="education">Education (separate entries with commas):</label>
+      <textarea
+        id="education"
+        placeholder="e.g., Bachelor of Computer Science, Masters in Web Development"
+      ></textarea>
+
+      <!-- Work Experience -->
+      <label for="experience"
+        >Work Experience (separate entries with commas):</label
+      >
+      <textarea
+        id="experience"
+        placeholder="e.g., Frontend Developer at XYZ, Software Engineer at ABC"
+      ></textarea>
+
+      <!-- Skills -->
+      <label for="skills">Skills (separate entries with commas):</label>
+      <input
+        type="text"
+        id="skills"
+        placeholder="e.g., HTML, CSS, JavaScript"
+      />
+
+      <!-- Existing fields -->
+      <label for="linkedin">LinkedIn:</label>
+      <input type="url" id="linkedin" placeholder="Enter LinkedIn URL" />
+
+      <label for="github">GitHub:</label>
+      <input type="url" id="github" placeholder="Enter GitHub URL" />
+
+      <label for="facebook">Facebook:</label>
+      <input type="url" id="facebook" placeholder="Enter Facebook URL" />
+      
+      <label for="twitter">Twitter:</label>
+      <input type="url" id="twitter" placeholder="Enter Twitter URL" />
+
+      <!-- Submit Button -->
+      <button type="submit">Generate Resume</button>
+    </form>
+
+    <!-- Resume Preview -->
+    <div id="resumePreview" class="hidden"></div>
+
+  <!-- section for shareable and download resume -->
+
+  <div id="shareable-link-container" style="display: none;">
+    <h2>Shareable Link</h2>
+    <p>Click button to generate your unique shareable link:</p>
+    <a href="#" id="shareable-link" target="_blank"></a>
+    <br>
+    <button id="downloadPdf" style="margin-top: 10px; padding: 0.5rem 1rem; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Download as PDF</button>
+  </div>
+
+    <!-- JavaScript -->
+    <script src="shareable.js"></script>
+  </body>
+</html>
+
